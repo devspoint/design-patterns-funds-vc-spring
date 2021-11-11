@@ -15,7 +15,7 @@ class FoodTechSave(
 
     override fun sector() = Investment.SectorEnum.FOODTECH
 
-    override fun saveInvestment(investment: Investment) : Investment {
+    override fun checkValidations(investment: Investment) : Investment {
         if (investment.companyValuation >= 10000000 && investment.companyValuation <= 15000000) {
             if (investment.startDate!!.isBefore(LocalDate.now().minusYears(1))) {
                 if (investment.value >= 600000 && investment.value <= 1200000) {
