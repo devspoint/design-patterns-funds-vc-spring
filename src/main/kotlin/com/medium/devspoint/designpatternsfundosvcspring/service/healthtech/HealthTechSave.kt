@@ -1,10 +1,11 @@
-package com.medium.devspoint.designpatternsfundosvcspring.service
+package com.medium.devspoint.designpatternsfundosvcspring.service.healthtech
 
 import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.OperatingTimeInvalidException
 import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.ValuationInvalidException
 import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.ValueToInvestInvalidException
 import com.medium.devspoint.designpatternsfundosvcspring.entity.Investment
 import com.medium.devspoint.designpatternsfundosvcspring.repository.InvestmentRepository
+import com.medium.devspoint.designpatternsfundosvcspring.service.SectorTech
 import org.springframework.stereotype.Service
 import java.time.LocalDate
 
@@ -15,7 +16,7 @@ class HealthTechSave(
 
     override fun sector() = Investment.SectorEnum.HEALTHTECH
 
-    override fun saveInvestment(investment: Investment) : Investment {
+    override fun checkValidations(investment: Investment) : Investment {
         if (investment.companyValuation >= 3000000 && investment.companyValuation <= 8000000) {
             if (investment.startDate!!.isBefore(LocalDate.now().minusYears(1))) {
                 if (investment.value >= 200000 && investment.value <= 600000) {

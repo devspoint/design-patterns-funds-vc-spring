@@ -1,10 +1,11 @@
-package com.medium.devspoint.designpatternsfundosvcspring.service
+package com.medium.devspoint.designpatternsfundosvcspring.service.foodtech
 
 import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.OperatingTimeInvalidException
 import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.ValuationInvalidException
 import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.ValueToInvestInvalidException
 import com.medium.devspoint.designpatternsfundosvcspring.entity.Investment
 import com.medium.devspoint.designpatternsfundosvcspring.repository.InvestmentRepository
+import com.medium.devspoint.designpatternsfundosvcspring.service.SectorTech
 import org.springframework.stereotype.Service
 import java.time.LocalDate
 

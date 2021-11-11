@@ -1,6 +1,7 @@
 package com.medium.devspoint.designpatternsfundosvcspring.controller.handles
 
 import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.OperatingTimeInvalidException
+import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.StartupInvalidException
 import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.ValuationInvalidException
 import com.medium.devspoint.designpatternsfundosvcspring.controller.handles.exceptions.ValueToInvestInvalidException
 import org.springframework.http.HttpStatus
@@ -20,6 +21,7 @@ class GlobalExceptionsHandles {
         ValuationInvalidException::class,
         OperatingTimeInvalidException::class,
         ValueToInvestInvalidException::class,
+        StartupInvalidException::class,
     ])
     fun preconditionFailed412(ex: Exception): ResponseData {
         return ResponseData(code = 1, message = ex.message!!)
